@@ -18,6 +18,10 @@ import './interfaces/IShakeShock.sol';
 
 contract ShakeShock is IShakeShock {
 
-    constructor() {}
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
 
 }
