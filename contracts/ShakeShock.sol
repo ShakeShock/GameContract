@@ -3,10 +3,10 @@
 pragma solidity ^0.8.0;
 import "hardhat/console.sol";
 import './interfaces/IShakeShock.sol';
+import './Shake.sol';
+// import './EscrowERC20.sol';
 
 // TODO
-    // Setup
-        // deploy $shake contract, so this contract is admin
 
     // New player
         // 1. Call minting of NFT for new player/address
@@ -19,9 +19,20 @@ import './interfaces/IShakeShock.sol';
 contract ShakeShock is IShakeShock {
 
     address public owner;
+    Shake public shakeToken;
+    EscrowERC20 public escrow;
 
-    constructor() {
+    constructor() public {
         owner = msg.sender;
+        shakeToken = new Shake();
     }
+
+    function newPlayer() view public {}
+
+    function _airdropNewPlayer() private {}
+
+    function initStakeGame() public {}
+
+    function _endStakeGame() private {}
 
 }
